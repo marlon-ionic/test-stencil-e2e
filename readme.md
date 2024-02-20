@@ -2,4 +2,6 @@
 
 # E2E Issue
 
-This project is a reproduction of an issue with E2E tests in StencilJS. A [Github issue](https://github.com/ionic-team/stencil/issues/1530) related to this was closed a few years ago, but it appears the issue still exists. This project has two components: `my-component` and `my-other-component`. The `my-other-component` component is a child of `my-component`. Each components have shadow enabled. The `>>>`  The `my-other-component` component has a button that triggers a method in the `my-other-component` component. The E2E test is to click the button in `my-other-component` and check if the method in `my-other-component` was called. The test fails because the method in `my-other-component` is not called.
+This project is a reproduction of an issue with E2E tests in StencilJS. A [Github issue](https://github.com/ionic-team/stencil/issues/1530) related to this was closed a few years ago, but it appears the issue still exists. This project has two components: `my-component` and `my-other-component`.
+
+The `my-other-component` component is a child of `my-component`. Each component has shadow enabled. The `my-other-component` component has an `h3` in the shadow and the E2E test for `my-component` component. The E2E test is to check the `textContent` for the shadow `h3`. The selector `my-component >>> div > my-other-component >>> h3` is used, but only the first shadow DOM appears to be available.
